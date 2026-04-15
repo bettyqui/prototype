@@ -16,3 +16,28 @@ Track important milestones and implementation notes here.
 - Added visual summaries to the item profile page (top properties and value type breakdown).
 - Fixed Wikidata endpoint access by sending explicit HTTP headers in SPARQL requests.
 - Parameterized notebook workflow so `item_id` can be changed in one place.
+- Enabled collapsible code blocks in rendered notebook HTML.
+- Initialized git repository, pushed to `mrchristian/prototype`, and connected `origin`.
+- Fixed GitHub Actions Pages setup failure by enabling automatic Pages enablement in workflow.
+- Added manual `workflow_dispatch` deployment instructions in project documentation.
+
+## Publishing Instructions
+
+Use these steps to publish and re-publish the site to GitHub Pages.
+
+1. Commit and push updates to `main`.
+2. In GitHub, open **Settings -> Pages**.
+3. Under Build and deployment, set Source to **GitHub Actions**.
+4. Confirm the workflow file `.github/workflows/publish.yml` is present.
+5. Wait for the **Publish Quarto Site** workflow to complete.
+
+### Manual publish (no code changes)
+
+1. Open **Actions** in GitHub.
+2. Select **Publish Quarto Site**.
+3. Click **Run workflow** and choose `main`.
+
+### If deployment fails on Pages configuration
+
+- Re-check Settings -> Pages is enabled for GitHub Actions.
+- Re-run the workflow after enabling Pages.

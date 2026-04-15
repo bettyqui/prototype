@@ -122,6 +122,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#project-log" id="toc-project-log" class="nav-link active" data-scroll-target="#project-log">Project Log</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">2026-04-15</a></li>
+  <li><a href="#publishing-instructions" id="toc-publishing-instructions" class="nav-link" data-scroll-target="#publishing-instructions">Publishing Instructions</a>
+  <ul class="collapse">
+  <li><a href="#manual-publish-no-code-changes" id="toc-manual-publish-no-code-changes" class="nav-link" data-scroll-target="#manual-publish-no-code-changes">Manual publish (no code changes)</a></li>
+  <li><a href="#if-deployment-fails-on-pages-configuration" id="toc-if-deployment-fails-on-pages-configuration" class="nav-link" data-scroll-target="#if-deployment-fails-on-pages-configuration">If deployment fails on Pages configuration</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -162,9 +167,39 @@ ul.task-list li input[type="checkbox"] {
 <li>Added visual summaries to the item profile page (top properties and value type breakdown).</li>
 <li>Fixed Wikidata endpoint access by sending explicit HTTP headers in SPARQL requests.</li>
 <li>Parameterized notebook workflow so <code>item_id</code> can be changed in one place.</li>
+<li>Enabled collapsible code blocks in rendered notebook HTML.</li>
+<li>Initialized git repository, pushed to <code>mrchristian/prototype</code>, and connected <code>origin</code>.</li>
+<li>Fixed GitHub Actions Pages setup failure by enabling automatic Pages enablement in workflow.</li>
+<li>Added manual <code>workflow_dispatch</code> deployment instructions in project documentation.</li>
+</ul>
+</section>
+<section id="publishing-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-instructions">Publishing Instructions</h2>
+<p>Use these steps to publish and re-publish the site to GitHub Pages.</p>
+<ol type="1">
+<li>Commit and push updates to <code>main</code>.</li>
+<li>In GitHub, open <strong>Settings -&gt; Pages</strong>.</li>
+<li>Under Build and deployment, set Source to <strong>GitHub Actions</strong>.</li>
+<li>Confirm the workflow file <code>.github/workflows/publish.yml</code> is present.</li>
+<li>Wait for the <strong>Publish Quarto Site</strong> workflow to complete.</li>
+</ol>
+<section id="manual-publish-no-code-changes" class="level3">
+<h3 class="anchored" data-anchor-id="manual-publish-no-code-changes">Manual publish (no code changes)</h3>
+<ol type="1">
+<li>Open <strong>Actions</strong> in GitHub.</li>
+<li>Select <strong>Publish Quarto Site</strong>.</li>
+<li>Click <strong>Run workflow</strong> and choose <code>main</code>.</li>
+</ol>
+</section>
+<section id="if-deployment-fails-on-pages-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="if-deployment-fails-on-pages-configuration">If deployment fails on Pages configuration</h3>
+<ul>
+<li>Re-check Settings -&gt; Pages is enabled for GitHub Actions.</li>
+<li>Re-run the workflow after enabling Pages.</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
