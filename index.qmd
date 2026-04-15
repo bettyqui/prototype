@@ -1,0 +1,28 @@
+---
+title: "Home"
+---
+
+# BIM Prototype 02
+
+This is the Quarto website source for the BIM prototype project.
+
+## Featured page
+
+- [Wikidata Item Profile: Q138547468](wikidata-item.html)
+
+## Changelog
+
+### 2026-04-15
+
+- Initialized the Quarto website and GitHub Pages workflow.
+- Switched Quarto output to `docs` for publishing.
+- Added a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.
+- Added reusable query/render helper logic in `wikidata_profile.py`.
+- Added profile visual summaries and parameterized `item_id` input.
+- See full details in the [Project Log](project-log.html).
+
+## Next steps
+
+- Add your project overview and goals.
+- Add additional pages as the project grows.
+- Publish automatically via GitHub Pages.

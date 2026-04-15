@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - project-log.qmd
+    - wikidata.qmd
+    - wikidata-item.ipynb
+
+website:
+  title: "BIM Prototype 02"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: project-log.qmd
+        text: Project Log
+      - href: wikidata.qmd
+        text: Wikidata
+      - href: wikidata-item.ipynb
+        text: Item Profile
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  freeze: auto

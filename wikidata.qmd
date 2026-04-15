@@ -1,0 +1,22 @@
+---
+title: "Wikidata"
+---
+
+# Wikidata
+
+This section documents Wikidata workflows, queries, and references for the project.
+
+## Item profile page
+
+- Open the rendered profile page: [Wikidata Item Profile](wikidata-item.html)
+
+## How data is retrieved
+
+The profile page is generated from `wikidata-item.ipynb`, which:
+
+1. Sets an `item_id` input (for example, `Q138547468`).
+2. Builds a SPARQL query for all direct statements on the item.
+3. Calls the Wikidata Query Service endpoint.
+4. Renders the returned data as a styled HTML profile.
+
+The helper module `wikidata_profile.py` contains reusable logic for querying, transforming, and rendering the data.

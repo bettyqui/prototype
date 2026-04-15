@@ -1,0 +1,5 @@
+.quarto/
+*.Rproj
+.Rproj.user/
+
+/.quarto/

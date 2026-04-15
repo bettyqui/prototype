@@ -1,0 +1,18 @@
+---
+title: "Project Log"
+---
+
+# Project Log
+
+Track important milestones and implementation notes here.
+
+## 2026-04-15
+
+- Initialized Quarto website source files.
+- Added GitHub Pages deployment workflow.
+- Set Quarto output directory to `docs` for GitHub Pages publishing.
+- Added notebook-backed item profile page for Wikidata item `Q138547468`.
+- Created reusable helper module `wikidata_profile.py` for query, fetch, and rendering logic.
+- Added visual summaries to the item profile page (top properties and value type breakdown).
+- Fixed Wikidata endpoint access by sending explicit HTTP headers in SPARQL requests.
+- Parameterized notebook workflow so `item_id` can be changed in one place.

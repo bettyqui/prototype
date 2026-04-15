@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "wikidata.html",
+    "href": "wikidata.html",
+    "title": "Wikidata",
+    "section": "",
+    "text": "Wikidata\nUse this page to document Wikidata-related workflows, queries, and references."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is the Quarto website source for the BIM prototype project.\n\n\n\nAdd your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
+  },
+  {
+    "objectID": "index.html#next-steps",
+    "href": "index.html#next-steps",
+    "title": "Home",
+    "section": "",
+    "text": "Add your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
+  },
+  {
+    "objectID": "project-log.html",
+    "href": "project-log.html",
+    "title": "Project Log",
+    "section": "",
+    "text": "Track important milestones and implementation notes here.\n\n\n\nInitialized Quarto website source files.\nAdded GitHub Pages deployment workflow."
+  },
+  {
+    "objectID": "project-log.html#section",
+    "href": "project-log.html#section",
+    "title": "Project Log",
+    "section": "",
+    "text": "Initialized Quarto website source files.\nAdded GitHub Pages deployment workflow."
+  }
+]
