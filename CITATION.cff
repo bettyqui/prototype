@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "BIM Prototype 02"
+message: "If you use this project, please cite it as below."
+type: software
+authors:
+  - family-names: "Quiala"
+    given-names: "Betty"
+    affiliation: "HSH"
+    orcid: "https://orcid.org/0009-0005-4668-0886"
+description: "A Quarto website that queries Wikidata with SPARQL and renders styled HTML profiles."
+license: MIT
+repository-code: "https://github.com/bettyqui/prototype.git"
+repository: "https://bettyqui.github.io/prototype/"
+keywords:
+  - Wikidata
+  - SPARQL
+  - Quarto
+  - Data profiling
+version: 0.1.0
+date-released: 2026-05-07

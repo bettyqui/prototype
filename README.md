@@ -11,44 +11,7 @@ This project is configured as a Quarto website and ready for deployment to GitHu
 - `wikidata_profile.py`: Shared Python helper logic used by the notebook page.
 - `_quarto.yml`: Quarto project and navigation configuration.
 
-## GitHub Codespace
-
-The repository includes a Dev Container configuration so you can work entirely in the browser without installing anything locally.
-
-1. On the repository page on GitHub, click **Code** → **Codespaces** → **Create codespace on main**.
-2. Wait for the container to build — Python packages from `requirements.txt` are installed automatically.
-3. Quarto will install itself
-4. Run the Quarto preview server:
-
-```bash
-quarto preview
-```
-
-5. VS Code will prompt you to open the forwarded port in a browser — click **Open in Browser** to see the live site.
-6. To profile a different Wikidata item, open `wikidata-item.ipynb`, update `item_id` in Cell 3, then run all cells or re-run `quarto render`.
-
 ## Local development
-
-### One-time local setup
-
-Use one of the setup scripts to create `.venv`, install notebook dependencies, register the local Jupyter kernel, and install Quarto when a supported package manager is available.
-
-Windows (PowerShell):
-
-```powershell
-./scripts/setup-local.ps1
-```
-
-macOS/Linux:
-
-```bash
-chmod +x ./scripts/setup-local.sh
-./scripts/setup-local.sh
-```
-
-If automatic Quarto installation is not possible on your system, install it from https://quarto.org/docs/get-started/ and then re-run the setup script.
-
-### Run locally
 
 ```powershell
 quarto preview
@@ -101,11 +64,3 @@ git branch -M main
 git remote add origin <your-repo-url>
 git push -u origin main
 ```
-
-## Licence
-
-Code: [![MIT Licence](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENCE)
-
-Content: [![CC BY-SA 4.0](https://img.shields.io/badge/licence-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-
-Source code is released under the [MIT Licence](LICENCE). Written content, documentation, and non-code assets are licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).

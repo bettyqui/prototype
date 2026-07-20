@@ -105,8 +105,8 @@ def _kind_chart_html(kind_breakdown: Counter) -> str:
         <div class="wd-kind-literal" style="width:{literal_pct}%"></div>
       </div>
       <div class="wd-kind-legend">
-        <span><span class="wd-kind-swatch" style="background:#1a1a18"></span><strong>{entity_count}</strong> Entity values</span>
-        <span><span class="wd-kind-swatch" style="background:#c5a882"></span><strong>{literal_count}</strong> Literal values</span>
+        <span><strong>{entity_count}</strong> Entity values</span>
+        <span><strong>{literal_count}</strong> Literal values</span>
       </div>
     </div>
     """
@@ -143,298 +143,149 @@ def render_profile_html(item_id: str, properties) -> str:
 
     return f"""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {{
-    --paper: #f8f6f1;
-    --ink: #1a1a18;
-    --rule: #c8c4bb;
-    --muted: #6b6760;
-    --accent: #1a1a18;
-    --highlight: #c5a882;
-    --card-bg: #ffffff;
-  }}
-
-  .wd-shell {{
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    color: var(--ink);
-    background: var(--paper);
-    padding: 3rem 0 4rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }}
-
-  /* ── Header ── */
-  .wd-header {{
-    border-top: 2px solid var(--ink);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.5rem 0 1.25rem;
-    margin-bottom: 2.5rem;
-  }}
-  .wd-header-eyebrow {{
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 0.5rem;
-  }}
-  .wd-header h2 {{
-    font-family: 'EB Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.75rem;
-    line-height: 1.15;
-  }}
-  .wd-header-meta {{
-    font-size: 0.8rem;
-    color: var(--muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: baseline;
-  }}
-  .wd-header-meta strong {{
-    font-weight: 500;
-    color: var(--ink);
-  }}
-  .wd-header-meta a {{
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 3px;
-  }}
-  .wd-header-meta a:hover {{
-    text-decoration-color: var(--ink);
-  }}
-
-  /* ── Catalogue numbers ── */
-  .wd-stat-row {{
-    display: flex;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 1.5rem;
-  }}
-  .wd-stat {{
-    display: flex;
-    flex-direction: column;
-  }}
-  .wd-stat-value {{
-    font-family: 'EB Garamond', serif;
-    font-size: 2rem;
-    line-height: 1;
-  }}
-  .wd-stat-label {{
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }}
-
-  /* ── Insight panels ── */
-  .wd-insights {{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    margin-bottom: 2.5rem;
-  }}
-  .wd-panel {{
-    background: var(--card-bg);
-    padding: 1.25rem 1.5rem;
-  }}
-  .wd-panel-title {{
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 1rem;
-  }}
-
-  /* ── Bar chart ── */
-  .wd-bars {{
-    display: grid;
-    gap: 0.55rem;
-  }}
-  .wd-bar-row {{
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr) 2fr 32px;
-    gap: 0.6rem;
-    align-items: center;
-    font-size: 0.78rem;
-  }}
-  .wd-bar-label {{
-    color: var(--ink);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }}
-  .wd-bar-track {{
-    height: 3px;
-    background: #e5e2db;
-    overflow: hidden;
-  }}
-  .wd-bar-fill {{
-    height: 3px;
-    background: var(--ink);
-  }}
-  .wd-bar-value {{
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-align: right;
-  }}
-
-  /* ── Kind breakdown ── */
-  .wd-kind-wrap {{
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }}
-  .wd-kind-bar {{
-    display: flex;
-    width: 100%;
-    height: 4px;
-    background: #e5e2db;
-    overflow: hidden;
-  }}
-  .wd-kind-entity {{
-    background: var(--ink);
-  }}
-  .wd-kind-literal {{
-    background: var(--highlight);
-  }}
-  .wd-kind-legend {{
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    font-size: 0.78rem;
-    color: var(--muted);
-  }}
-  .wd-kind-legend strong {{
-    color: var(--ink);
-    font-weight: 500;
-  }}
-  .wd-kind-swatch {{
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 4px;
-    vertical-align: middle;
-  }}
-
-  /* ── Property grid ── */
-  .wd-section-label {{
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-  }}
-  .wd-grid {{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }}
-  .wd-card {{
-    background: var(--card-bg);
-    padding: 1rem 1.25rem;
-  }}
-  .wd-card h3 {{
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 0.5rem;
-  }}
-  .wd-card ul {{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: var(--ink);
-  }}
-  .wd-card li {{
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0.15rem 0;
-    border-bottom: 1px solid #f0ede8;
-  }}
-  .wd-card li:last-child {{
-    border-bottom: none;
-  }}
-  .wd-card a {{
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 2px;
-  }}
-  .wd-card a:hover {{
-    text-decoration-color: var(--ink);
-  }}
+:root {{
+  --bg: #f4f7fb;
+  --ink: #0f172a;
+  --card: #ffffff;
+  --accent: #005f73;
+  --border: #dbe4ee;
+}}
+body {{
+  background: radial-gradient(circle at 20% 10%, #e2efff 0%, var(--bg) 45%);
+}}
+.wd-shell {{
+  padding: 1rem 0 2rem;
+}}
+.wd-hero {{
+  background: linear-gradient(135deg, #0a9396, #005f73);
+  color: white;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+  margin-bottom: 1rem;
+}}
+.wd-hero h2 {{
+  margin: 0;
+  font-size: 1.5rem;
+}}
+.wd-meta {{
+  margin-top: 0.4rem;
+  color: #d8f3f4;
+}}
+.wd-insights {{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}}
+.wd-panel {{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}}
+.wd-panel h3 {{
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+}}
+.wd-bars {{
+  display: grid;
+  gap: 0.4rem;
+}}
+.wd-bar-row {{
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 2fr 40px;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}}
+.wd-bar-track {{
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}}
+.wd-bar-fill {{
+  height: 10px;
+}}
+.wd-kind-bar {{
+  display: flex;
+  width: 100%;
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}}
+.wd-kind-entity {{
+  background: #0f766e;
+}}
+.wd-kind-literal {{
+  background: #f59e0b;
+}}
+.wd-kind-legend {{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}}
+.wd-grid {{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+}}
+.wd-card {{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}}
+.wd-card h3 {{
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  color: var(--accent);
+}}
+.wd-card ul {{
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}}
+.wd-card li {{
+  margin: 0.25rem 0;
+  line-height: 1.35;
+}}
+.wd-card a {{
+  color: #0a58ca;
+  text-decoration: none;
+}}
+.wd-card a:hover {{
+  text-decoration: underline;
+}}
 </style>
 
 <div class="wd-shell">
-
-  <header class="wd-header">
-    <p class="wd-header-eyebrow">Catalogue Entry</p>
+  <section class="wd-hero">
     <h2>Wikidata Statement Profile</h2>
-    <div class="wd-header-meta">
-      <span>Object ID&nbsp;<strong>{escape(item_id)}</strong></span>
-      <span>Statements&nbsp;<strong>{statement_count}</strong></span>
-      <span>Retrieved&nbsp;<strong>{generated_at}</strong></span>
-      <span><a href="https://www.wikidata.org/wiki/{escape(item_id)}" target="_blank" rel="noopener">View source record ↗</a></span>
-    </div>
-  </header>
-
-  <div class="wd-stat-row">
-    <div class="wd-stat">
-      <span class="wd-stat-value">{statement_count}</span>
-      <span class="wd-stat-label">Statements</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">{len(freq)}</span>
-      <span class="wd-stat-label">Properties</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">{kind_breakdown.get('entity', 0)}</span>
-      <span class="wd-stat-label">Entity values</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">{kind_breakdown.get('literal', 0)}</span>
-      <span class="wd-stat-label">Literal values</span>
-    </div>
-  </div>
+    <div class="wd-meta">Item: <strong>{escape(item_id)}</strong> · Statements: <strong>{statement_count}</strong> · Generated: {generated_at}</div>
+    <div class="wd-meta"><a href="https://www.wikidata.org/wiki/{escape(item_id)}" style="color:white;text-decoration:underline" target="_blank" rel="noopener">Open item on Wikidata</a></div>
+  </section>
 
   <section class="wd-insights">
     <div class="wd-panel">
-      <p class="wd-panel-title">Properties by statement count</p>
+      <h3>Top Properties by Statement Count</h3>
       {_property_chart_html(freq, top_n=10)}
     </div>
     <div class="wd-panel">
-      <p class="wd-panel-title">Value type breakdown</p>
+      <h3>Value Type Breakdown</h3>
       {_kind_chart_html(kind_breakdown)}
     </div>
   </section>
 
-  <p class="wd-section-label">All properties</p>
   <section class="wd-grid">
     {''.join(cards)}
   </section>
-
 </div>
 """

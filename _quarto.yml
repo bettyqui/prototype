@@ -6,11 +6,29 @@ project:
     - project-log.qmd
     - wikidata.qmd
     - wikidata-item.ipynb
+    - artist-datamodel.qmd
+    - exhibition-datamodel.qmd
+    - dnb-catalogue-datamodel.qmd
+    - item-in-exhibition-datamodel.qmd
+
+metadata:
+  author:
+    - name: Betty Quiala
+      orcid: https://orcid.org/0009-0005-4668-0886
+      email: betty-andrade.quiala@stud.hs-hannover.de
 
 website:
   title: "BIM Prototype 02"
   navbar:
     left:
+      - href: artist-datamodel.qmd
+        text: Künstler-Datenmodell
+      - href: exhibition-datamodel.qmd
+        text: Ausstellungs-Datenmodell
+      - href: dnb-catalogue-datamodel.qmd
+        text: DNB-Katalog-Datenmodell 
+      - href: item-in-exhibition-datamodel.qmd
+        text: Objekt im Ausstellungs-Datenmodell
       - href: index.qmd
         text: Home
       - href: project-log.qmd
@@ -19,6 +37,8 @@ website:
         text: Wikidata
       - href: wikidata-item.ipynb
         text: Item Profile
+
+
 
 format:
   html:

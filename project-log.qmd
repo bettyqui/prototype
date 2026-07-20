@@ -6,15 +6,8 @@ title: "Project Log"
 
 Track important milestones and implementation notes here.
 
-## 2026-04-16
-
-
 ## 2026-04-15
- The graph is generated using the `networkx` and `matplotlib` Python libraries.
- The code extracts subject-property-object triples from the SPARQL query results (`bindings`), builds a directed graph, and renders it as a static image.
- The new code cell appears after the HTML profile and is compatible with Quarto HTML/PDF output.
- To update the graph for a different item, change the `item_id` at the top of the notebook and re-run all cells.
- If `networkx` or `matplotlib` are not installed, add them to `requirements.txt` and re-run the environment setup.
+
 - Initialized Quarto website source files.
 - Added GitHub Pages deployment workflow.
 - Set Quarto output directory to `docs` for GitHub Pages publishing.
