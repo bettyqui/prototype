@@ -10,9 +10,9 @@ project:
 
 metadata:
   author:
-    - name: Betty Quiala
-      orcid: https://orcid.org/0009-0005-4668-0886
-      email: betty-andrade.quiala@stud.hs-hannover.de
+    - name: "Betty Quiala"
+      orcid: "0009-0005-4668-0886"
+      email: "betty-andrade.quiala@stud.hs-hannover.de"
 
 website:
   title: "BIM Prototype 02"
