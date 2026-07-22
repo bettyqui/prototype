@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Betty Quiala">
 
 <title>Wikidata Item Profile – BIM Prototype 02</title>
 <style>
@@ -39,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-7ee132498c61da618cb63d6ce2648d66.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -95,6 +96,22 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./artist-datamodel.qmd"> 
+<span class="menu-text">Künstler-Datenmodell</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./exhibition-datamodel.qmd"> 
+<span class="menu-text">Ausstellungs-Datenmodell</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dnb-catalogue-datamodel.qmd"> 
+<span class="menu-text">DNB-Katalog-Datenmodell</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./item-in-exhibition-datamodel.qmd"> 
+<span class="menu-text">Objekt im Ausstellungs-Datenmodell</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -134,6 +151,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Betty Quiala <a href="mailto:betty-andrade.quiala@stud.hs-hannover.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/https://orcid.org/0009-0005-4668-0886" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
     
   
     
@@ -148,12 +171,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Wikidata Item Profile</h1>
 <p>This notebook-backed page queries Wikidata with SPARQL and renders a styled HTML profile.</p>
 <p>To profile another item, change the <code>item_id</code> value in Cell 3 and re-render the site.</p>
-<p>https://www.sprengel-museum.de/ausstellungen/aktuell/abenteuer-abstraktion</p>
-<div id="2c369ca0" class="cell" data-execution_count="6">
-<section id="sparql-query-used-for-q138572982" class="level2 cell-output cell-output-display cell-output-markdown" data-execution_count="6">
-<h2 class="anchored" data-anchor-id="sparql-query-used-for-q138572982">SPARQL Query Used for Q138572982</h2>
+<div id="2c369ca0" class="cell" data-execution_count="40">
+<section id="sparql-query-used-for-q138572984" class="level2 cell-output cell-output-display cell-output-markdown" data-execution_count="40">
+<h2 class="anchored" data-anchor-id="sparql-query-used-for-q138572984">SPARQL Query Used for Q138572984</h2>
 <pre class="sparql"><code>SELECT ?property ?propertyLabel ?value ?valueLabel WHERE {
-  BIND(wd:Q138572982 AS ?item)
+  BIND(wd:Q138572984 AS ?item)
   ?item ?p ?statement .
   ?property wikibase:claim ?p .
   ?statement ?ps ?value .
@@ -164,325 +186,177 @@ ul.task-list li input[type="checkbox"] {
 ORDER BY ?propertyLabel</code></pre>
 </section>
 </div>
-<div id="eaae8030" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>17</code></pre>
+<div id="eaae8030" class="cell" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>12</code></pre>
 </div>
 </div>
-<div id="f0195f22" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="f0195f22" class="cell" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="42">
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
-
-  :root {
-    --paper: #f8f6f1;
-    --ink: #1a1a18;
-    --rule: #c8c4bb;
-    --muted: #6b6760;
-    --accent: #1a1a18;
-    --highlight: #c5a882;
-    --card-bg: #ffffff;
-  }
-
-  .wd-shell {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    color: var(--ink);
-    background: var(--paper);
-    padding: 3rem 0 4rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  /* ── Header ── */
-  .wd-header {
-    border-top: 2px solid var(--ink);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.5rem 0 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-  .wd-header-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 0.5rem;
-  }
-  .wd-header h2 {
-    font-family: 'EB Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.75rem;
-    line-height: 1.15;
-  }
-  .wd-header-meta {
-    font-size: 0.8rem;
-    color: var(--muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: baseline;
-  }
-  .wd-header-meta strong {
-    font-weight: 500;
-    color: var(--ink);
-  }
-  .wd-header-meta a {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 3px;
-  }
-  .wd-header-meta a:hover {
-    text-decoration-color: var(--ink);
-  }
-
-  /* ── Catalogue numbers ── */
-  .wd-stat-row {
-    display: flex;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 1.5rem;
-  }
-  .wd-stat {
-    display: flex;
-    flex-direction: column;
-  }
-  .wd-stat-value {
-    font-family: 'EB Garamond', serif;
-    font-size: 2rem;
-    line-height: 1;
-  }
-  .wd-stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.2rem;
-  }
-
-  /* ── Insight panels ── */
-  .wd-insights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    margin-bottom: 2.5rem;
-  }
-  .wd-panel {
-    background: var(--card-bg);
-    padding: 1.25rem 1.5rem;
-  }
-  .wd-panel-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 1rem;
-  }
-
-  /* ── Bar chart ── */
-  .wd-bars {
-    display: grid;
-    gap: 0.55rem;
-  }
-  .wd-bar-row {
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr) 2fr 32px;
-    gap: 0.6rem;
-    align-items: center;
-    font-size: 0.78rem;
-  }
-  .wd-bar-label {
-    color: var(--ink);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .wd-bar-track {
-    height: 3px;
-    background: #e5e2db;
-    overflow: hidden;
-  }
-  .wd-bar-fill {
-    height: 3px;
-    background: var(--ink);
-  }
-  .wd-bar-value {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-align: right;
-  }
-
-  /* ── Kind breakdown ── */
-  .wd-kind-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .wd-kind-bar {
-    display: flex;
-    width: 100%;
-    height: 4px;
-    background: #e5e2db;
-    overflow: hidden;
-  }
-  .wd-kind-entity {
-    background: var(--ink);
-  }
-  .wd-kind-literal {
-    background: var(--highlight);
-  }
-  .wd-kind-legend {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-  .wd-kind-legend strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .wd-kind-swatch {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 4px;
-    vertical-align: middle;
-  }
-
-  /* ── Property grid ── */
-  .wd-section-label {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .wd-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-  .wd-card {
-    background: var(--card-bg);
-    padding: 1rem 1.25rem;
-  }
-  .wd-card h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 0.5rem;
-  }
-  .wd-card ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: var(--ink);
-  }
-  .wd-card li {
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0.15rem 0;
-    border-bottom: 1px solid #f0ede8;
-  }
-  .wd-card li:last-child {
-    border-bottom: none;
-  }
-  .wd-card a {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 2px;
-  }
-  .wd-card a:hover {
-    text-decoration-color: var(--ink);
-  }
+:root {
+  --bg: #f4f7fb;
+  --ink: #0f172a;
+  --card: #ffffff;
+  --accent: #005f73;
+  --border: #dbe4ee;
+}
+body {
+  background: radial-gradient(circle at 20% 10%, #e2efff 0%, var(--bg) 45%);
+}
+.wd-shell {
+  padding: 1rem 0 2rem;
+}
+.wd-hero {
+  background: linear-gradient(135deg, #0a9396, #005f73);
+  color: white;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+  margin-bottom: 1rem;
+}
+.wd-hero h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.wd-meta {
+  margin-top: 0.4rem;
+  color: #d8f3f4;
+}
+.wd-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+.wd-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+.wd-panel h3 {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+}
+.wd-bars {
+  display: grid;
+  gap: 0.4rem;
+}
+.wd-bar-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 2fr 40px;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.wd-bar-track {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.wd-bar-fill {
+  height: 10px;
+}
+.wd-kind-bar {
+  display: flex;
+  width: 100%;
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.wd-kind-entity {
+  background: #0f766e;
+}
+.wd-kind-literal {
+  background: #f59e0b;
+}
+.wd-kind-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.wd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+.wd-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+.wd-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  color: var(--accent);
+}
+.wd-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}
+.wd-card li {
+  margin: 0.25rem 0;
+  line-height: 1.35;
+}
+.wd-card a {
+  color: #0a58ca;
+  text-decoration: none;
+}
+.wd-card a:hover {
+  text-decoration: underline;
+}
 </style>
 
 <div class="wd-shell">
-
-  <header class="wd-header">
-    <p class="wd-header-eyebrow">Catalogue Entry</p>
+  <section class="wd-hero">
     <h2 class="anchored">Wikidata Statement Profile</h2>
-    <div class="wd-header-meta">
-      <span>Object ID&nbsp;<strong>Q138572982</strong></span>
-      <span>Statements&nbsp;<strong>17</strong></span>
-      <span>Retrieved&nbsp;<strong>2026-05-07 06:18 UTC</strong></span>
-      <span><a href="https://www.wikidata.org/wiki/Q138572982" target="_blank" rel="noopener">View source record ↗</a></span>
-    </div>
-  </header>
-
-  <div class="wd-stat-row">
-    <div class="wd-stat">
-      <span class="wd-stat-value">17</span>
-      <span class="wd-stat-label">Statements</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">8</span>
-      <span class="wd-stat-label">Properties</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">13</span>
-      <span class="wd-stat-label">Entity values</span>
-    </div>
-    <div class="wd-stat">
-      <span class="wd-stat-value">4</span>
-      <span class="wd-stat-label">Literal values</span>
-    </div>
-  </div>
+    <div class="wd-meta">Item: <strong>Q138572984</strong> · Statements: <strong>12</strong> · Generated: 2026-07-20 16:56 UTC</div>
+    <div class="wd-meta"><a href="https://www.wikidata.org/wiki/Q138572984" style="color:white;text-decoration:underline" target="_blank" rel="noopener">Open item on Wikidata</a></div>
+  </section>
 
   <section class="wd-insights">
     <div class="wd-panel">
-      <p class="wd-panel-title">Properties by statement count</p>
-      <div class="wd-bars"><div class="wd-bar-row"><div class="wd-bar-label">main subject</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:100%;background:#1d4ed8"></div></div><div class="wd-bar-value">9</div></div><div class="wd-bar-row"><div class="wd-bar-label">title</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:22%;background:#1d4ed8"></div></div><div class="wd-bar-value">2</div></div><div class="wd-bar-row"><div class="wd-bar-label">curator</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">end time</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">instance of</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">location</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">official website</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">start time</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:11%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div></div>
+      <h3 class="anchored">Top Properties by Statement Count</h3>
+      <div class="wd-bars"><div class="wd-bar-row"><div class="wd-bar-label">main subject</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:100%;background:#1d4ed8"></div></div><div class="wd-bar-value">4</div></div><div class="wd-bar-row"><div class="wd-bar-label">title</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:50%;background:#1d4ed8"></div></div><div class="wd-bar-value">2</div></div><div class="wd-bar-row"><div class="wd-bar-label">curator</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">end time</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">instance of</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">location</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">official website</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div><div class="wd-bar-row"><div class="wd-bar-label">start time</div><div class="wd-bar-track"><div class="wd-bar-fill" style="width:25%;background:#1d4ed8"></div></div><div class="wd-bar-value">1</div></div></div>
     </div>
     <div class="wd-panel">
-      <p class="wd-panel-title">Value type breakdown</p>
+      <h3 class="anchored">Value Type Breakdown</h3>
       
     <div class="wd-kind-wrap">
       <div class="wd-kind-bar">
-        <div class="wd-kind-entity" style="width:76%"></div>
-        <div class="wd-kind-literal" style="width:24%"></div>
+        <div class="wd-kind-entity" style="width:67%"></div>
+        <div class="wd-kind-literal" style="width:33%"></div>
       </div>
       <div class="wd-kind-legend">
-        <span><span class="wd-kind-swatch" style="background:#1a1a18"></span><strong>13</strong> Entity values</span>
-        <span><span class="wd-kind-swatch" style="background:#c5a882"></span><strong>4</strong> Literal values</span>
+        <span><strong>8</strong> Entity values</span>
+        <span><strong>4</strong> Literal values</span>
       </div>
     </div>
     
     </div>
   </section>
 
-  <p class="wd-section-label">All properties</p>
   <section class="wd-grid">
     
             <section class="wd-card">
               <h3 class="anchored">curator</h3>
-              <ul><li><a href="http://www.wikidata.org/entity/Q113782935" target="_blank" rel="noopener">Inka Schube</a></li></ul>
+              <ul><li><a href="http://www.wikidata.org/entity/Q95190162" target="_blank" rel="noopener">Karin Orchard</a></li></ul>
             </section>
             
             <section class="wd-card">
               <h3 class="anchored">end time</h3>
-              <ul><li>2024-11-17T00:00:00Z</li></ul>
+              <ul><li>2024-07-28T00:00:00Z</li></ul>
             </section>
             
             <section class="wd-card">
@@ -497,41 +371,62 @@ ORDER BY ?propertyLabel</code></pre>
             
             <section class="wd-card">
               <h3 class="anchored">main subject</h3>
-              <ul><li><a href="http://www.wikidata.org/entity/Q4768237" target="_blank" rel="noopener">Anne Collier</a></li><li><a href="http://www.wikidata.org/entity/Q53869219" target="_blank" rel="noopener">Dörte Eißfeldt</a></li><li><a href="http://www.wikidata.org/entity/Q4493559" target="_blank" rel="noopener">Seiichi Furuya</a></li><li><a href="http://www.wikidata.org/entity/Q99383860" target="_blank" rel="noopener">Christina Glanz</a></li><li><a href="http://www.wikidata.org/entity/Q320241" target="_blank" rel="noopener">Rodney Graham</a></li><li><a href="http://www.wikidata.org/entity/Q23772152" target="_blank" rel="noopener">Annette Kelm</a></li><li><a href="http://www.wikidata.org/entity/Q77287944" target="_blank" rel="noopener">Andrzej Steinbach</a></li><li><a href="http://www.wikidata.org/entity/Q55236331" target="_blank" rel="noopener">Raphaela Vogel</a></li><li><a href="http://www.wikidata.org/entity/Q133676645" target="_blank" rel="noopener">Q133676645</a></li></ul>
+              <ul><li><a href="http://www.wikidata.org/entity/Q20180374" target="_blank" rel="noopener">Dietrich Helms</a></li><li><a href="http://www.wikidata.org/entity/Q695684" target="_blank" rel="noopener">Arnold Leissler</a></li><li><a href="http://www.wikidata.org/entity/Q2283651" target="_blank" rel="noopener">Siegfried Neuenhausen</a></li><li><a href="http://www.wikidata.org/entity/Q1721348" target="_blank" rel="noopener">Kai Sudeck</a></li></ul>
             </section>
             
             <section class="wd-card">
               <h3 class="anchored">official website</h3>
-              <ul><li><a href="https://www.sprengel-museum.de/ausstellungen/archiv/das-bild-ist-was-es-tut" target="_blank" rel="noopener">https://www.sprengel-museum.de/ausstellungen/archiv/das-bild-ist-was-es-tut</a></li></ul>
+              <ul><li><a href="https://www.sprengel-museum.de/ausstellungen/archiv/nordlichtery" target="_blank" rel="noopener">https://www.sprengel-museum.de/ausstellungen/archiv/nordlichtery</a></li></ul>
             </section>
             
             <section class="wd-card">
               <h3 class="anchored">start time</h3>
-              <ul><li>2024-08-21T00:00:00Z</li></ul>
+              <ul><li>2024-04-10T00:00:00Z</li></ul>
             </section>
             
             <section class="wd-card">
               <h3 class="anchored">title</h3>
-              <ul><li>Das Bild ist, was es tut</li><li>Das Bild ist, was es tut</li></ul>
+              <ul><li>Nordlichter</li><li>Nothern Lights</li></ul>
             </section>
             
   </section>
+</div>
+</div>
+</div>
+<section id="sparql-statement-diagramm" class="level2">
+<h2 class="anchored" data-anchor-id="sparql-statement-diagramm">SPARQL-Statement-Diagramm</h2>
+<pre class="mermaid"><code>graph TD
+    A["Item&lt;br/&gt;Q138572984"]
+    B["Statements&lt;br/&gt;12"]
+    C["main subject&lt;br/&gt;P921"]
+    D["title&lt;br/&gt;P1476"]
+    E["curator&lt;br/&gt;P1640"]
+    F["end time&lt;br/&gt;P582"]
+    G["instance of&lt;br/&gt;P31"]
+    H["location&lt;br/&gt;P276"]
+    I["official website URL&lt;br/&gt;P856"]
+    J["start time&lt;br/&gt;P580"]
+    K["Entity values&lt;br/&gt;8"]
+    L["Literal values&lt;br/&gt;4"]
 
-</div>
-</div>
-</div>
-<section id="visualizing-the-wikidata-item-as-a-graph" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-the-wikidata-item-as-a-graph">Visualizing the Wikidata Item as a Graph</h2>
-<p>The following cell renders a graph visualization of the relationships for the selected Wikidata item. This helps to see how the item is connected to other entities via its properties.</p>
-<div id="01c8542d" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="wikidata-item_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+    A --&gt;|has statements| B
+    B --&gt;|contains| C
+    B --&gt;|contains| D
+    B --&gt;|contains| E
+    B --&gt;|contains| F
+    B --&gt;|contains| G
+    B --&gt;|contains| H
+    B --&gt;|contains| I
+    B --&gt;|contains| J
+
+    C --&gt;|value type| K
+    D --&gt;|value type| L
+    E --&gt;|value type| K
+    F --&gt;|value type| L
+    G --&gt;|value type| K
+    H --&gt;|value type| K
+    I --&gt;|value type| L
+    J --&gt;|value type| L</code></pre>
 
 
 </section>
