@@ -9,6 +9,43 @@ This is the Quarto website source for the BIM prototype project.
 ## Featured page
 
 - [Wikidata Item Profile: Q138547468](wikidata-item.html)
+---
+title: "Zuordnung des Datenmodells zu Standards"
+---
+
+# Datenmodell Nordlichter (Q138572984)
+
+Das Datenmodell der Ausstellung **„Nordlichter“ (Q138572984)** basiert auf Wikidata und wird mit etablierten Metadatenstandards verglichen.
+
+## Mapping Wikidata → Standards
+
+| Wikidata Eigenschaft | Bedeutung | Dublin Core | Schema.org | CIDOC CRM |
+|----------------------|-----------|-------------|------------|-----------|
+| instance of (P31) | Ausstellung | dc:type | Event | E7 Activity |
+| title (P1476) | Titel der Ausstellung | dc:title | name | E41 Appellation |
+| location (P276) | Ort der Ausstellung | dc:coverage | location | E53 Place |
+| creator (P170) | Urheber/Künstler | dc:creator | creator | E39 Actor |
+| start time (P580) | Beginn der Ausstellung | dc:date | startDate | E52 Time-Span |
+| end time (P582) | Ende der Ausstellung | dc:date | endDate | E52 Time-Span |
+| curator (P1640) | Kurator | dc:contributor | curator | E39 Actor |
+| official website (P856) | Webseite | dc:identifier | url | - |
+| language (P407) | Sprache | dc:language | inLanguage | E56 Language |
+
+## Beschreibung der Standards
+
+### Wikidata
+Wikidata dient als Ausgangspunkt für die Modellierung. Die Ausstellung wird als Objekt (`Q138572984`) beschrieben und über Eigenschaften wie Titel, Ort, Zeitraum und Beteiligte charakterisiert.
+
+### Dublin Core
+Dublin Core ermöglicht die Beschreibung von Kulturobjekten durch grundlegende Metadaten wie Titel, Ersteller, Datum und Sprache.
+
+### Schema.org
+Schema.org beschreibt strukturierte Daten für Webseiten. Eine Ausstellung kann als `Event` modelliert werden.
+
+### CIDOC CRM
+CIDOC CRM ist ein Standard für Kulturerbeinformationen. Die Ausstellung wird als Ereignis (`E7 Activity`) beschrieben und mit Orten, Personen und Zeitspannen verbunden.
+
+## Fazit
 
 ## Changelog
 
