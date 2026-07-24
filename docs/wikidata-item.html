@@ -171,8 +171,8 @@ ul.task-list li input[type="checkbox"] {
 <h1>Wikidata Item Profile</h1>
 <p>This notebook-backed page queries Wikidata with SPARQL and renders a styled HTML profile.</p>
 <p>To profile another item, change the <code>item_id</code> value in Cell 3 and re-render the site.</p>
-<div id="2c369ca0" class="cell" data-execution_count="40">
-<section id="sparql-query-used-for-q138572984" class="level2 cell-output cell-output-display cell-output-markdown" data-execution_count="40">
+<div id="2c369ca0" class="cell" data-execution_count="2">
+<section id="sparql-query-used-for-q138572984" class="level2 cell-output cell-output-display cell-output-markdown" data-execution_count="2">
 <h2 class="anchored" data-anchor-id="sparql-query-used-for-q138572984">SPARQL Query Used for Q138572984</h2>
 <pre class="sparql"><code>SELECT ?property ?propertyLabel ?value ?valueLabel WHERE {
   BIND(wd:Q138572984 AS ?item)
@@ -186,13 +186,13 @@ ul.task-list li input[type="checkbox"] {
 ORDER BY ?propertyLabel</code></pre>
 </section>
 </div>
-<div id="eaae8030" class="cell" data-execution_count="41">
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div id="eaae8030" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>12</code></pre>
 </div>
 </div>
-<div id="f0195f22" class="cell" data-execution_count="42">
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div id="f0195f22" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 
 <style>
 :root {
@@ -321,7 +321,7 @@ body {
 <div class="wd-shell">
   <section class="wd-hero">
     <h2 class="anchored">Wikidata Statement Profile</h2>
-    <div class="wd-meta">Item: <strong>Q138572984</strong> · Statements: <strong>12</strong> · Generated: 2026-07-20 16:56 UTC</div>
+    <div class="wd-meta">Item: <strong>Q138572984</strong> · Statements: <strong>12</strong> · Generated: 2026-07-22 13:49 UTC</div>
     <div class="wd-meta"><a href="https://www.wikidata.org/wiki/Q138572984" style="color:white;text-decoration:underline" target="_blank" rel="noopener">Open item on Wikidata</a></div>
   </section>
 
@@ -393,43 +393,17 @@ body {
 </div>
 </div>
 </div>
-<section id="sparql-statement-diagramm" class="level2">
-<h2 class="anchored" data-anchor-id="sparql-statement-diagramm">SPARQL-Statement-Diagramm</h2>
-<pre class="mermaid"><code>graph TD
-    A["Item&lt;br/&gt;Q138572984"]
-    B["Statements&lt;br/&gt;12"]
-    C["main subject&lt;br/&gt;P921"]
-    D["title&lt;br/&gt;P1476"]
-    E["curator&lt;br/&gt;P1640"]
-    F["end time&lt;br/&gt;P582"]
-    G["instance of&lt;br/&gt;P31"]
-    H["location&lt;br/&gt;P276"]
-    I["official website URL&lt;br/&gt;P856"]
-    J["start time&lt;br/&gt;P580"]
-    K["Entity values&lt;br/&gt;8"]
-    L["Literal values&lt;br/&gt;4"]
-
-    A --&gt;|has statements| B
-    B --&gt;|contains| C
-    B --&gt;|contains| D
-    B --&gt;|contains| E
-    B --&gt;|contains| F
-    B --&gt;|contains| G
-    B --&gt;|contains| H
-    B --&gt;|contains| I
-    B --&gt;|contains| J
-
-    C --&gt;|value type| K
-    D --&gt;|value type| L
-    E --&gt;|value type| K
-    F --&gt;|value type| L
-    G --&gt;|value type| K
-    H --&gt;|value type| K
-    I --&gt;|value type| L
-    J --&gt;|value type| L</code></pre>
+<div id="a882c5e2" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wikidata-item_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
