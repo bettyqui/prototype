@@ -9,9 +9,6 @@ This is the Quarto website source for the BIM prototype project.
 ## Featured page
 
 - [Wikidata Item Profile: Q138547468](wikidata-item.html)
----
-title: "Zuordnung des Datenmodells zu Standards"
----
 
 # Datenmodell Nordlichter (Q138572984)
 
@@ -44,8 +41,6 @@ Schema.org beschreibt strukturierte Daten für Webseiten. Eine Ausstellung kann 
 
 ### CIDOC CRM
 CIDOC CRM ist ein Standard für Kulturerbeinformationen. Die Ausstellung wird als Ereignis (`E7 Activity`) beschrieben und mit Orten, Personen und Zeitspannen verbunden.
-
-## Fazit
 
 ## Changelog
 
