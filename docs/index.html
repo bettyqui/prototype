@@ -93,28 +93,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./artist-datamodel.qmd"> 
-<span class="menu-text">Künstler-Datenmodell</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./exhibition-datamodel.qmd"> 
-<span class="menu-text">Ausstellungs-Datenmodell</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./dnb-catalogue-datamodel.qmd"> 
-<span class="menu-text">DNB-Katalog-Datenmodell</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./item-in-exhibition-datamodel.qmd"> 
-<span class="menu-text">Objekt im Ausstellungs-Datenmodell</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./project-log.html"> 
 <span class="menu-text">Project Log</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ausstellung-nordlichter.html"> 
+<span class="menu-text">Ausstellung</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./wikidata.html"> 
@@ -143,6 +131,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#bim-prototype-02" id="toc-bim-prototype-02" class="nav-link active" data-scroll-target="#bim-prototype-02">BIM Prototype 02</a>
   <ul class="collapse">
   <li><a href="#featured-page" id="toc-featured-page" class="nav-link" data-scroll-target="#featured-page">Featured page</a></li>
+  </ul></li>
+  <li><a href="#datenmodell-nordlichter-q138572984" id="toc-datenmodell-nordlichter-q138572984" class="nav-link" data-scroll-target="#datenmodell-nordlichter-q138572984">Datenmodell Nordlichter (Q138572984)</a>
+  <ul class="collapse">
+  <li><a href="#mapping-wikidata-standards" id="toc-mapping-wikidata-standards" class="nav-link" data-scroll-target="#mapping-wikidata-standards">Mapping Wikidata → Standards</a></li>
+  <li><a href="#beschreibung-der-standards" id="toc-beschreibung-der-standards" class="nav-link" data-scroll-target="#beschreibung-der-standards">Beschreibung der Standards</a>
+  <ul class="collapse">
+  <li><a href="#wikidata" id="toc-wikidata" class="nav-link" data-scroll-target="#wikidata">Wikidata</a></li>
+  <li><a href="#dublin-core" id="toc-dublin-core" class="nav-link" data-scroll-target="#dublin-core">Dublin Core</a></li>
+  <li><a href="#schema.org" id="toc-schema.org" class="nav-link" data-scroll-target="#schema.org">Schema.org</a></li>
+  <li><a href="#cidoc-crm" id="toc-cidoc-crm" class="nav-link" data-scroll-target="#cidoc-crm">CIDOC CRM</a></li>
+  </ul></li>
+  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit">Fazit</a></li>
   <li><a href="#changelog" id="toc-changelog" class="nav-link" data-scroll-target="#changelog">Changelog</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">2026-04-15</a></li>
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Betty Quiala <a href="mailto:betty-andrade.quiala@stud.hs-hannover.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/https://orcid.org/0009-0005-4668-0886" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p>Betty Quiala <a href="mailto:betty-andrade.quiala@stud.hs-hannover.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0005-4668-0886" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
           </div>
   </div>
     
@@ -186,8 +186,121 @@ ul.task-list li input[type="checkbox"] {
 <section id="featured-page" class="level2">
 <h2 class="anchored" data-anchor-id="featured-page">Featured page</h2>
 <ul>
-<li><a href="wikidata-item.html">Wikidata Item Profile: Q138547468</a></li>
+<li><h2 id="wikidata-item-profile-q138547468" class="anchored"><a href="wikidata-item.html">Wikidata Item Profile: Q138547468</a></h2>
+<h2 id="title-zuordnung-des-datenmodells-zu-standards" class="anchored">title: “Zuordnung des Datenmodells zu Standards”</h2></li>
 </ul>
+</section>
+</section>
+<section id="datenmodell-nordlichter-q138572984" class="level1">
+<h1>Datenmodell Nordlichter (Q138572984)</h1>
+<p>Das Datenmodell der Ausstellung <strong>„Nordlichter“ (Q138572984)</strong> basiert auf Wikidata und wird mit etablierten Metadatenstandards verglichen.</p>
+<section id="mapping-wikidata-standards" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-wikidata-standards">Mapping Wikidata → Standards</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 15%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Wikidata Eigenschaft</th>
+<th>Bedeutung</th>
+<th>Dublin Core</th>
+<th>Schema.org</th>
+<th>CIDOC CRM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>instance of (P31)</td>
+<td>Ausstellung</td>
+<td>dc:type</td>
+<td>Event</td>
+<td>E7 Activity</td>
+</tr>
+<tr class="even">
+<td>title (P1476)</td>
+<td>Titel der Ausstellung</td>
+<td>dc:title</td>
+<td>name</td>
+<td>E41 Appellation</td>
+</tr>
+<tr class="odd">
+<td>location (P276)</td>
+<td>Ort der Ausstellung</td>
+<td>dc:coverage</td>
+<td>location</td>
+<td>E53 Place</td>
+</tr>
+<tr class="even">
+<td>creator (P170)</td>
+<td>Urheber/Künstler</td>
+<td>dc:creator</td>
+<td>creator</td>
+<td>E39 Actor</td>
+</tr>
+<tr class="odd">
+<td>start time (P580)</td>
+<td>Beginn der Ausstellung</td>
+<td>dc:date</td>
+<td>startDate</td>
+<td>E52 Time-Span</td>
+</tr>
+<tr class="even">
+<td>end time (P582)</td>
+<td>Ende der Ausstellung</td>
+<td>dc:date</td>
+<td>endDate</td>
+<td>E52 Time-Span</td>
+</tr>
+<tr class="odd">
+<td>curator (P1640)</td>
+<td>Kurator</td>
+<td>dc:contributor</td>
+<td>curator</td>
+<td>E39 Actor</td>
+</tr>
+<tr class="even">
+<td>official website (P856)</td>
+<td>Webseite</td>
+<td>dc:identifier</td>
+<td>url</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>language (P407)</td>
+<td>Sprache</td>
+<td>dc:language</td>
+<td>inLanguage</td>
+<td>E56 Language</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="beschreibung-der-standards" class="level2">
+<h2 class="anchored" data-anchor-id="beschreibung-der-standards">Beschreibung der Standards</h2>
+<section id="wikidata" class="level3">
+<h3 class="anchored" data-anchor-id="wikidata">Wikidata</h3>
+<p>Wikidata dient als Ausgangspunkt für die Modellierung. Die Ausstellung wird als Objekt (<code>Q138572984</code>) beschrieben und über Eigenschaften wie Titel, Ort, Zeitraum und Beteiligte charakterisiert.</p>
+</section>
+<section id="dublin-core" class="level3">
+<h3 class="anchored" data-anchor-id="dublin-core">Dublin Core</h3>
+<p>Dublin Core ermöglicht die Beschreibung von Kulturobjekten durch grundlegende Metadaten wie Titel, Ersteller, Datum und Sprache.</p>
+</section>
+<section id="schema.org" class="level3">
+<h3 class="anchored" data-anchor-id="schema.org">Schema.org</h3>
+<p>Schema.org beschreibt strukturierte Daten für Webseiten. Eine Ausstellung kann als <code>Event</code> modelliert werden.</p>
+</section>
+<section id="cidoc-crm" class="level3">
+<h3 class="anchored" data-anchor-id="cidoc-crm">CIDOC CRM</h3>
+<p>CIDOC CRM ist ein Standard für Kulturerbeinformationen. Die Ausstellung wird als Ereignis (<code>E7 Activity</code>) beschrieben und mit Orten, Personen und Zeitspannen verbunden.</p>
+</section>
+</section>
+<section id="fazit" class="level2">
+<h2 class="anchored" data-anchor-id="fazit">Fazit</h2>
 </section>
 <section id="changelog" class="level2">
 <h2 class="anchored" data-anchor-id="changelog">Changelog</h2>

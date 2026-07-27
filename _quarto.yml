@@ -4,6 +4,7 @@ project:
   render:
     - index.qmd
     - project-log.qmd
+    - ausstellung-nordlichter.qmd
     - wikidata.qmd
     - wikidata-item.ipynb
   
@@ -22,6 +23,8 @@ website:
         text: Home
       - href: project-log.qmd
         text: Project Log
+      - href: ausstellung-nordlichter.qmd
+        text: Ausstellung
       - href: wikidata.qmd
         text: Wikidata
       - href: wikidata-item.ipynb

@@ -1,0 +1,31 @@
+---
+title: "Nordlichter"
+subtitle: "Ausstellung im Sprengel Museum Hannover"
+format:
+  html:
+    toc: true
+---
+
+# Nordlichter (Q138572984)
+
+Die Ausstellung **Nordlichter** ist im Rahmen dieses Quarto-Projekts als Wikidata-Entität beschrieben. Die Seite bündelt zentrale Informationen zu Titel, Ort, Zeitraum und weiterer Kontextangaben.
+
+## Kurzbeschreibung
+
+**Nordlichter** ist die Bezeichnung für eine Ausstellung im Sprengel Museum Hannover, die im Jahr 2024 stattgefunden hat. Die Informationen auf dieser Seite basieren auf Wikidata und dienen als Beispiel für die strukturierte Darstellung kultureller Ereignisse im Projekt.
+
+## Zentrale Angaben
+
+- **Titel:** Nordlichter
+- **Wikidata-Entität:** Q138572984
+- **Zeitraum:** 10. April 2024 bis 28. Juli 2024
+- **Ort:** Sprengel Museum Hannover
+- **Offizielle Website:** [Sprengel Museum – Nordlichter](https://www.sprengel-museum.de/ausstellungen/archiv/nordlichtery)
+
+## Kontext
+
+Die Ausstellung wird im Projekt als Beispiel für die Verbindung von kulturellen Daten, Metadatenstandards und digitalen Publikationsformaten verwendet. Ziel ist es, die Ausstellung sowohl für Menschen als auch für maschinenlesbare Datenstrukturen nachvollziehbar zu beschreiben.
+
+## Verknüpfung zum Projekt
+
+Diese Seite ist Teil der Quarto-Webpräsenz und ergänzt die vorhandenen Seiten zu Wikidata und Projektlogbuch.

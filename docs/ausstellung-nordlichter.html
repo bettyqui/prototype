@@ -8,7 +8,7 @@
 
 <meta name="author" content="Betty Quiala">
 
-<title>Project Log – BIM Prototype 02</title>
+<title>Nordlichter – BIM Prototype 02</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -97,11 +97,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./project-log.html" aria-current="page"> 
+    <a class="nav-link" href="./project-log.html"> 
 <span class="menu-text">Project Log</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ausstellung-nordlichter.html"> 
+    <a class="nav-link active" href="./ausstellung-nordlichter.html" aria-current="page"> 
 <span class="menu-text">Ausstellung</span></a>
   </li>  
   <li class="nav-item">
@@ -128,14 +128,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-log" id="toc-project-log" class="nav-link active" data-scroll-target="#project-log">Project Log</a>
+  <li><a href="#nordlichter-q138572984" id="toc-nordlichter-q138572984" class="nav-link active" data-scroll-target="#nordlichter-q138572984">Nordlichter (Q138572984)</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">2026-04-15</a></li>
-  <li><a href="#publishing-instructions" id="toc-publishing-instructions" class="nav-link" data-scroll-target="#publishing-instructions">Publishing Instructions</a>
-  <ul class="collapse">
-  <li><a href="#manual-publish-no-code-changes" id="toc-manual-publish-no-code-changes" class="nav-link" data-scroll-target="#manual-publish-no-code-changes">Manual publish (no code changes)</a></li>
-  <li><a href="#if-deployment-fails-on-pages-configuration" id="toc-if-deployment-fails-on-pages-configuration" class="nav-link" data-scroll-target="#if-deployment-fails-on-pages-configuration">If deployment fails on Pages configuration</a></li>
-  </ul></li>
+  <li><a href="#kurzbeschreibung" id="toc-kurzbeschreibung" class="nav-link" data-scroll-target="#kurzbeschreibung">Kurzbeschreibung</a></li>
+  <li><a href="#zentrale-angaben" id="toc-zentrale-angaben" class="nav-link" data-scroll-target="#zentrale-angaben">Zentrale Angaben</a></li>
+  <li><a href="#kontext" id="toc-kontext" class="nav-link" data-scroll-target="#kontext">Kontext</a></li>
+  <li><a href="#verknüpfung-zum-projekt" id="toc-verknüpfung-zum-projekt" class="nav-link" data-scroll-target="#verknüpfung-zum-projekt">Verknüpfung zum Projekt</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -145,7 +143,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Log</h1>
+<h1 class="title">Nordlichter</h1>
+<p class="subtitle lead">Ausstellung im Sprengel Museum Hannover</p>
 </div>
 
 
@@ -168,53 +167,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="project-log" class="level1">
-<h1>Project Log</h1>
-<p>Track important milestones and implementation notes here.</p>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">2026-04-15</h2>
+<section id="nordlichter-q138572984" class="level1">
+<h1>Nordlichter (Q138572984)</h1>
+<p>Die Ausstellung <strong>Nordlichter</strong> ist im Rahmen dieses Quarto-Projekts als Wikidata-Entität beschrieben. Die Seite bündelt zentrale Informationen zu Titel, Ort, Zeitraum und weiterer Kontextangaben.</p>
+<section id="kurzbeschreibung" class="level2">
+<h2 class="anchored" data-anchor-id="kurzbeschreibung">Kurzbeschreibung</h2>
+<p><strong>Nordlichter</strong> ist die Bezeichnung für eine Ausstellung im Sprengel Museum Hannover, die im Jahr 2024 stattgefunden hat. Die Informationen auf dieser Seite basieren auf Wikidata und dienen als Beispiel für die strukturierte Darstellung kultureller Ereignisse im Projekt.</p>
+</section>
+<section id="zentrale-angaben" class="level2">
+<h2 class="anchored" data-anchor-id="zentrale-angaben">Zentrale Angaben</h2>
 <ul>
-<li>Initialized Quarto website source files.</li>
-<li>Added GitHub Pages deployment workflow.</li>
-<li>Set Quarto output directory to <code>docs</code> for GitHub Pages publishing.</li>
-<li>Added notebook-backed item profile page for Wikidata item <code>Q138547468</code>.</li>
-<li>Created reusable helper module <code>wikidata_profile.py</code> for query, fetch, and rendering logic.</li>
-<li>Added visual summaries to the item profile page (top properties and value type breakdown).</li>
-<li>Fixed Wikidata endpoint access by sending explicit HTTP headers in SPARQL requests.</li>
-<li>Parameterized notebook workflow so <code>item_id</code> can be changed in one place.</li>
-<li>Enabled collapsible code blocks in rendered notebook HTML.</li>
-<li>Initialized git repository, pushed to <code>mrchristian/prototype</code>, and connected <code>origin</code>.</li>
-<li>Fixed GitHub Actions Pages setup failure by enabling automatic Pages enablement in workflow.</li>
-<li>Added manual <code>workflow_dispatch</code> deployment instructions in project documentation.</li>
+<li><strong>Titel:</strong> Nordlichter</li>
+<li><strong>Wikidata-Entität:</strong> Q138572984</li>
+<li><strong>Zeitraum:</strong> 10. April 2024 bis 28. Juli 2024</li>
+<li><strong>Ort:</strong> Sprengel Museum Hannover</li>
+<li><strong>Offizielle Website:</strong> <a href="https://www.sprengel-museum.de/ausstellungen/archiv/nordlichtery">Sprengel Museum – Nordlichter</a></li>
 </ul>
 </section>
-<section id="publishing-instructions" class="level2">
-<h2 class="anchored" data-anchor-id="publishing-instructions">Publishing Instructions</h2>
-<p>Use these steps to publish and re-publish the site to GitHub Pages.</p>
-<ol type="1">
-<li>Commit and push updates to <code>main</code>.</li>
-<li>In GitHub, open <strong>Settings -&gt; Pages</strong>.</li>
-<li>Under Build and deployment, set Source to <strong>GitHub Actions</strong>.</li>
-<li>Confirm the workflow file <code>.github/workflows/publish.yml</code> is present.</li>
-<li>Wait for the <strong>Publish Quarto Site</strong> workflow to complete.</li>
-</ol>
-<section id="manual-publish-no-code-changes" class="level3">
-<h3 class="anchored" data-anchor-id="manual-publish-no-code-changes">Manual publish (no code changes)</h3>
-<ol type="1">
-<li>Open <strong>Actions</strong> in GitHub.</li>
-<li>Select <strong>Publish Quarto Site</strong>.</li>
-<li>Click <strong>Run workflow</strong> and choose <code>main</code>.</li>
-</ol>
+<section id="kontext" class="level2">
+<h2 class="anchored" data-anchor-id="kontext">Kontext</h2>
+<p>Die Ausstellung wird im Projekt als Beispiel für die Verbindung von kulturellen Daten, Metadatenstandards und digitalen Publikationsformaten verwendet. Ziel ist es, die Ausstellung sowohl für Menschen als auch für maschinenlesbare Datenstrukturen nachvollziehbar zu beschreiben.</p>
 </section>
-<section id="if-deployment-fails-on-pages-configuration" class="level3">
-<h3 class="anchored" data-anchor-id="if-deployment-fails-on-pages-configuration">If deployment fails on Pages configuration</h3>
-<ul>
-<li>Re-check Settings -&gt; Pages is enabled for GitHub Actions.</li>
-<li>Re-run the workflow after enabling Pages.</li>
-</ul>
+<section id="verknüpfung-zum-projekt" class="level2">
+<h2 class="anchored" data-anchor-id="verknüpfung-zum-projekt">Verknüpfung zum Projekt</h2>
+<p>Diese Seite ist Teil der Quarto-Webpräsenz und ergänzt die vorhandenen Seiten zu Wikidata und Projektlogbuch.</p>
 
 
-</section>
 </section>
 </section>
 

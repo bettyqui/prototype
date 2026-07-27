@@ -14,11 +14,81 @@
     "text": "SELECT ?property ?propertyLabel ?value ?valueLabel WHERE {\n  BIND(wd:Q138572984 AS ?item)\n  ?item ?p ?statement .\n  ?property wikibase:claim ?p .\n  ?statement ?ps ?value .\n  ?property wikibase:statementProperty ?ps .\n\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\nORDER BY ?propertyLabel"
   },
   {
-    "objectID": "wikidata-item.html#sparql-statement-diagramm",
-    "href": "wikidata-item.html#sparql-statement-diagramm",
-    "title": "Wikidata Item Profile",
+    "objectID": "ausstellung-nordlichter.html",
+    "href": "ausstellung-nordlichter.html",
+    "title": "Nordlichter",
     "section": "",
-    "text": "graph TD\n    A[\"Item&lt;br/&gt;Q138572984\"]\n    B[\"Statements&lt;br/&gt;12\"]\n    C[\"main subject&lt;br/&gt;P921\"]\n    D[\"title&lt;br/&gt;P1476\"]\n    E[\"curator&lt;br/&gt;P1640\"]\n    F[\"end time&lt;br/&gt;P582\"]\n    G[\"instance of&lt;br/&gt;P31\"]\n    H[\"location&lt;br/&gt;P276\"]\n    I[\"official website URL&lt;br/&gt;P856\"]\n    J[\"start time&lt;br/&gt;P580\"]\n    K[\"Entity values&lt;br/&gt;8\"]\n    L[\"Literal values&lt;br/&gt;4\"]\n\n    A --&gt;|has statements| B\n    B --&gt;|contains| C\n    B --&gt;|contains| D\n    B --&gt;|contains| E\n    B --&gt;|contains| F\n    B --&gt;|contains| G\n    B --&gt;|contains| H\n    B --&gt;|contains| I\n    B --&gt;|contains| J\n\n    C --&gt;|value type| K\n    D --&gt;|value type| L\n    E --&gt;|value type| K\n    F --&gt;|value type| L\n    G --&gt;|value type| K\n    H --&gt;|value type| K\n    I --&gt;|value type| L\n    J --&gt;|value type| L"
+    "text": "Die Ausstellung Nordlichter ist im Rahmen dieses Quarto-Projekts als Wikidata-Entität beschrieben. Die Seite bündelt zentrale Informationen zu Titel, Ort, Zeitraum und weiterer Kontextangaben.\n\n\nNordlichter ist die Bezeichnung für eine Ausstellung im Sprengel Museum Hannover, die im Jahr 2024 stattgefunden hat. Die Informationen auf dieser Seite basieren auf Wikidata und dienen als Beispiel für die strukturierte Darstellung kultureller Ereignisse im Projekt.\n\n\n\n\nTitel: Nordlichter\nWikidata-Entität: Q138572984\nZeitraum: 10. April 2024 bis 28. Juli 2024\nOrt: Sprengel Museum Hannover\nOffizielle Website: Sprengel Museum – Nordlichter\n\n\n\n\nDie Ausstellung wird im Projekt als Beispiel für die Verbindung von kulturellen Daten, Metadatenstandards und digitalen Publikationsformaten verwendet. Ziel ist es, die Ausstellung sowohl für Menschen als auch für maschinenlesbare Datenstrukturen nachvollziehbar zu beschreiben.\n\n\n\nDiese Seite ist Teil der Quarto-Webpräsenz und ergänzt die vorhandenen Seiten zu Wikidata und Projektlogbuch."
+  },
+  {
+    "objectID": "ausstellung-nordlichter.html#kurzbeschreibung",
+    "href": "ausstellung-nordlichter.html#kurzbeschreibung",
+    "title": "Nordlichter",
+    "section": "",
+    "text": "Nordlichter ist die Bezeichnung für eine Ausstellung im Sprengel Museum Hannover, die im Jahr 2024 stattgefunden hat. Die Informationen auf dieser Seite basieren auf Wikidata und dienen als Beispiel für die strukturierte Darstellung kultureller Ereignisse im Projekt."
+  },
+  {
+    "objectID": "ausstellung-nordlichter.html#zentrale-angaben",
+    "href": "ausstellung-nordlichter.html#zentrale-angaben",
+    "title": "Nordlichter",
+    "section": "",
+    "text": "Titel: Nordlichter\nWikidata-Entität: Q138572984\nZeitraum: 10. April 2024 bis 28. Juli 2024\nOrt: Sprengel Museum Hannover\nOffizielle Website: Sprengel Museum – Nordlichter"
+  },
+  {
+    "objectID": "ausstellung-nordlichter.html#kontext",
+    "href": "ausstellung-nordlichter.html#kontext",
+    "title": "Nordlichter",
+    "section": "",
+    "text": "Die Ausstellung wird im Projekt als Beispiel für die Verbindung von kulturellen Daten, Metadatenstandards und digitalen Publikationsformaten verwendet. Ziel ist es, die Ausstellung sowohl für Menschen als auch für maschinenlesbare Datenstrukturen nachvollziehbar zu beschreiben."
+  },
+  {
+    "objectID": "ausstellung-nordlichter.html#verknüpfung-zum-projekt",
+    "href": "ausstellung-nordlichter.html#verknüpfung-zum-projekt",
+    "title": "Nordlichter",
+    "section": "",
+    "text": "Diese Seite ist Teil der Quarto-Webpräsenz und ergänzt die vorhandenen Seiten zu Wikidata und Projektlogbuch."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This is the Quarto website source for the BIM prototype project."
+  },
+  {
+    "objectID": "index.html#mapping-wikidata-standards",
+    "href": "index.html#mapping-wikidata-standards",
+    "title": "Home",
+    "section": "Mapping Wikidata → Standards",
+    "text": "Mapping Wikidata → Standards\n\n\n\n\n\n\n\n\n\n\nWikidata Eigenschaft\nBedeutung\nDublin Core\nSchema.org\nCIDOC CRM\n\n\n\n\ninstance of (P31)\nAusstellung\ndc:type\nEvent\nE7 Activity\n\n\ntitle (P1476)\nTitel der Ausstellung\ndc:title\nname\nE41 Appellation\n\n\nlocation (P276)\nOrt der Ausstellung\ndc:coverage\nlocation\nE53 Place\n\n\ncreator (P170)\nUrheber/Künstler\ndc:creator\ncreator\nE39 Actor\n\n\nstart time (P580)\nBeginn der Ausstellung\ndc:date\nstartDate\nE52 Time-Span\n\n\nend time (P582)\nEnde der Ausstellung\ndc:date\nendDate\nE52 Time-Span\n\n\ncurator (P1640)\nKurator\ndc:contributor\ncurator\nE39 Actor\n\n\nofficial website (P856)\nWebseite\ndc:identifier\nurl\n-\n\n\nlanguage (P407)\nSprache\ndc:language\ninLanguage\nE56 Language"
+  },
+  {
+    "objectID": "index.html#beschreibung-der-standards",
+    "href": "index.html#beschreibung-der-standards",
+    "title": "Home",
+    "section": "Beschreibung der Standards",
+    "text": "Beschreibung der Standards\n\nWikidata\nWikidata dient als Ausgangspunkt für die Modellierung. Die Ausstellung wird als Objekt (Q138572984) beschrieben und über Eigenschaften wie Titel, Ort, Zeitraum und Beteiligte charakterisiert.\n\n\nDublin Core\nDublin Core ermöglicht die Beschreibung von Kulturobjekten durch grundlegende Metadaten wie Titel, Ersteller, Datum und Sprache.\n\n\nSchema.org\nSchema.org beschreibt strukturierte Daten für Webseiten. Eine Ausstellung kann als Event modelliert werden.\n\n\nCIDOC CRM\nCIDOC CRM ist ein Standard für Kulturerbeinformationen. Die Ausstellung wird als Ereignis (E7 Activity) beschrieben und mit Orten, Personen und Zeitspannen verbunden."
+  },
+  {
+    "objectID": "index.html#fazit",
+    "href": "index.html#fazit",
+    "title": "Home",
+    "section": "Fazit",
+    "text": "Fazit"
+  },
+  {
+    "objectID": "index.html#changelog",
+    "href": "index.html#changelog",
+    "title": "Home",
+    "section": "Changelog",
+    "text": "Changelog\n\n2026-04-15\n\nInitialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log."
+  },
+  {
+    "objectID": "index.html#next-steps",
+    "href": "index.html#next-steps",
+    "title": "Home",
+    "section": "Next steps",
+    "text": "Next steps\n\nAdd your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
   },
   {
     "objectID": "project-log.html",
@@ -40,34 +110,6 @@
     "title": "Project Log",
     "section": "",
     "text": "Use these steps to publish and re-publish the site to GitHub Pages.\n\nCommit and push updates to main.\nIn GitHub, open Settings -&gt; Pages.\nUnder Build and deployment, set Source to GitHub Actions.\nConfirm the workflow file .github/workflows/publish.yml is present.\nWait for the Publish Quarto Site workflow to complete.\n\n\n\n\nOpen Actions in GitHub.\nSelect Publish Quarto Site.\nClick Run workflow and choose main.\n\n\n\n\n\nRe-check Settings -&gt; Pages is enabled for GitHub Actions.\nRe-run the workflow after enabling Pages."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "This is the Quarto website source for the BIM prototype project.\n\n\n\nWikidata Item Profile: Q138547468\n\n\n\n\n\n\n\nInitialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log.\n\n\n\n\n\n\nAdd your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
-  },
-  {
-    "objectID": "index.html#featured-page",
-    "href": "index.html#featured-page",
-    "title": "Home",
-    "section": "",
-    "text": "Wikidata Item Profile: Q138547468"
-  },
-  {
-    "objectID": "index.html#changelog",
-    "href": "index.html#changelog",
-    "title": "Home",
-    "section": "",
-    "text": "Initialized the Quarto website and GitHub Pages workflow.\nSwitched Quarto output to docs for publishing.\nAdded a notebook-backed Wikidata item profile page with SPARQL-driven data rendering.\nAdded reusable query/render helper logic in wikidata_profile.py.\nAdded profile visual summaries and parameterized item_id input.\nSee full details in the Project Log."
-  },
-  {
-    "objectID": "index.html#next-steps",
-    "href": "index.html#next-steps",
-    "title": "Home",
-    "section": "",
-    "text": "Add your project overview and goals.\nAdd additional pages as the project grows.\nPublish automatically via GitHub Pages."
   },
   {
     "objectID": "wikidata.html",
