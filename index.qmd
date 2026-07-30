@@ -14,8 +14,6 @@ This is the Quarto website source for the BIM prototype project.
 
 Das Datenmodell der Ausstellung **„Nordlichter“ (Q138572984)** basiert auf Wikidata und wird mit etablierten Metadatenstandards verglichen.
 
-## Mapping Wikidata → Standards
-
 | Wikidata Eigenschaft | Bedeutung | Dublin Core | Schema.org | CIDOC CRM |
 |----------------------|-----------|-------------|------------|-----------|
 | instance of (P31) | Ausstellung | dc:type | Event | E7 Activity |
