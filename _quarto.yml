@@ -31,13 +31,13 @@ website:
         text: Wikidata
       - href: wikidata-item.ipynb
         text: Item Profile
-     - text: Data Models
+      - text: "Data Models"
         menu:
           - href: artist-datamodel.qmd
             text: Artist Data Model
           - href: exhibition-datamodel.qmd
             text: Exhibition Data Model
-        
+      
 
 format:
   html:
