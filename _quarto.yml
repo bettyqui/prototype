@@ -7,6 +7,8 @@ project:
     - ausstellung-nordlichter.qmd
     - wikidata.qmd
     - wikidata-item.ipynb
+    - artist-datamodel.qmd
+    - exhibition-datamodel.qmd
   
 
 metadata:
@@ -29,8 +31,13 @@ website:
         text: Wikidata
       - href: wikidata-item.ipynb
         text: Item Profile
-
-
+     - text: "Data Models"
+        menu:
+          - href: data-models/artist-datamodel.qmd
+            text: Artist Data Model
+          - href: data-models/exhibition-datamodel.qmd
+            text: Exhibition Data Model
+        
 
 format:
   html:
