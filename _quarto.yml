@@ -33,9 +33,9 @@ website:
         text: Item Profile
      - text: "Data Models"
         menu:
-          - href: data-models/artist-datamodel.qmd
+          - href: artist-datamodel.qmd
             text: Artist Data Model
-          - href: data-models/exhibition-datamodel.qmd
+          - href: exhibition-datamodel.qmd
             text: Exhibition Data Model
         
 
