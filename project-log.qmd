@@ -6,6 +6,21 @@ title: "Project Log"
 
 Track important milestones and implementation notes here.
 
+## 2026-07-28
+
+- Switched the Wikidata Item Profile to Nordlichter.
+- Regenerated the SPARQL-based item profile by executing the notebook.
+- Integrated and verified the Wikidata network graph.
+- Implemented the Exhibition Data Model page.
+- Developed the Artist Data Model page.
+- Integrated ORCID metadata into the project.
+- Set up a CITATION.cff file containing the project’s citation metadata.
+- Documented the Wikidata item on a dedicated Quarto page.
+- Adjusted the website navigation to include the new pages.
+- Rendered the complete Quarto project to verify the changes.
+- Committed and pushed the completed changes to the GitHub repository.
+- Deployed the latest version of the website to GitHub Pages.
+
 ## 2026-04-15
 
 - Initialized Quarto website source files.
